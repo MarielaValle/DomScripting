@@ -61,9 +61,17 @@ console.log(5)
 
 // otras funciones de window
 
-window.onscroll function() {
+window.onscroll = (function() {
+console.log("scrolling....")
+})
 
-}
 
+//Seleccionar un elemento y asociar un evento
+const btnEnviar = document.querySelector(".boton--primario");
 
-//
+btnEnviar.addEventListener("click", function(evento){
+console.log(evento);
+evento.preventDefault();
+console.log("enviando formulario")
+
+})
